@@ -65,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),const SizedBox(height: 15),
               const Text(
-                "Welcome to Back",
+                "Welcome in MindWell",
                 style: TextStyle(
                   fontSize: 30,
                   fontFamily: "Poppins",
@@ -74,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 5),
               const Text(
-                "return to being a quality person",
+                "start creating your account",
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.normal,
@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 20),
               FormAuthController(
                 controller: _emailController,
-                hintText: "Username",
+                hintText: "Enter username",
                 isPasswordField: false,
               ),
               const SizedBox(height: 20),
