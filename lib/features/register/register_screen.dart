@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
 import 'package:mindwell/features/login/login_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
+
+  @override
+  _RegisterScreenState createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 50,
                   child: FormAuthController(
                     hintText: "Username",
@@ -45,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 50,
                   child: FormAuthController(
                     hintText: "Email",
@@ -60,7 +66,7 @@ class RegisterScreen extends StatelessWidget {
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 50,
                   child: FormAuthController(
                     hintText: "Password",
@@ -74,7 +80,8 @@ class RegisterScreen extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    //Action
+                    // Action
+                    // Gunakan _usernameController.text, _emailController.text, _passwordController.text
                   },
                   child: const Text(
                     "Register",
