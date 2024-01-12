@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "168942969498",
+    "firebase_url": "https://mindwell-808d4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mindwell-808d4",
+    "storage_bucket": "mindwell-808d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168942969498:android:c52815e6c3f1c0a0447523",
+        "android_client_info": {
+          "package_name": "com.example.mindwell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168942969498-cv9ml06f9paepgs8sbvfbor1ham4k3f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo3OEBIig8QDZ-9HAZXsOHFDeLXQDAgKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168942969498-cv9ml06f9paepgs8sbvfbor1ham4k3f7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

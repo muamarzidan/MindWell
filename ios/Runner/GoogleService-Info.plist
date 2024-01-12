@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>168942969498-22267dbrcos60lijkgbn8u99oaj204q5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.168942969498-22267dbrcos60lijkgbn8u99oaj204q5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGD9j-j4C1Z_kHHQU9GZlBgmIp-Ve0qWo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>168942969498</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mindwell</string>
+	<key>PROJECT_ID</key>
+	<string>mindwell-808d4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mindwell-808d4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:168942969498:ios:263f25fc65167036447523</string>
+	<key>DATABASE_URL</key>
+	<string>https://mindwell-808d4-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
