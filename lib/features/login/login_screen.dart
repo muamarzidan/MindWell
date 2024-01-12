@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/features/controllers/form_login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -14,47 +15,79 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                'MindWell',
+                "MindWell",
                 style: TextStyle(
-                  fontSize: 36,
+                  fontSize: 50,
+                  fontFamily: "Poppins",
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 20),
+              const FormLoginController(
+                labelText: "Email",
+                hintText: "Enter your email",
+                inputType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: 20),
+              const FormLoginController(
+                labelText: "Password",
+                hintText: "Enter your password",
+                inputType: TextInputType.visiblePassword,
+                isPasswordField: true,
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
               const Text(
-                'Welcome to MindWell',
+                "Forgot Password?",
                 style: TextStyle(
                   fontSize: 18,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 20),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
+              const Text(
+                "Don't have an account?",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Implement login functionality here
-                },
-                child: const Text('Login'),
+              const Text(
+                "Sign Up",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ],
           ),

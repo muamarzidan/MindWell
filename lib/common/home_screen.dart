@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            // Action when "See More" is pressed
+                            // Action
                           },
                           child: const Text(
                             'See More',
@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
 Widget buildCard(String imagePath, String title, String description) {
   return Container(
     margin: const EdgeInsets.only(right: 16.0),
-    width: 200, // Sesuaikan lebar card sesuai kebutuhan
+    width: 200,
     child: Card(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

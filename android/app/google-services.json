@@ -30,6 +30,13 @@
             {
               "client_id": "168942969498-cv9ml06f9paepgs8sbvfbor1ham4k3f7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "168942969498-22267dbrcos60lijkgbn8u99oaj204q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mindwell"
+              }
             }
           ]
         }
