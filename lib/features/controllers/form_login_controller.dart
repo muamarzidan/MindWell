@@ -37,17 +37,9 @@ class _FormLoginControllerState extends State<FormLoginController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 5,
-            offset: Offset(0, 2),
-          ),
-        ],
       ),
       child: TextFormField(
         style: const TextStyle(
@@ -56,7 +48,7 @@ class _FormLoginControllerState extends State<FormLoginController> {
         ),
         controller: widget.controller,
         key: widget.fieldKey,
-        obscureText: widget.isPasswordField! ? _obscureText : false,
+        obscureText: widget.isPasswordField == true ? _obscureText : false,
         onSaved: widget.onSaved,
         validator: widget.validator,
         onFieldSubmitted: widget.onFieldSubmitted,
@@ -68,21 +60,21 @@ class _FormLoginControllerState extends State<FormLoginController> {
             color: Colors.grey[400],
             fontSize: 18,
           ),
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-            child: widget.isPasswordField!
-                ? Icon(
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: Colors.grey[400],
-                  )
-                : null,
-          ),
+          suffixIcon: widget.isPasswordField == true
+              ? GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  child: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                    color: _obscureText == false ? Colors.blue : Colors.grey[400],
+                  ),
+                )
+              : null,
         ),
-      )
+      ),
     );
   }
 }

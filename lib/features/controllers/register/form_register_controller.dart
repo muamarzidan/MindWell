@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/features/controllers/form_login_controller.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
