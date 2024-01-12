@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
 
-class FormLoginController extends StatefulWidget {
-
+class FormAuthController extends StatefulWidget {
   final TextEditingController? controller;
   final Key? fieldKey;
   final bool? isPasswordField;
@@ -14,7 +13,8 @@ class FormLoginController extends StatefulWidget {
   final ValueChanged<String>? onFieldSubmitted;
   final TextInputType? inputType;
 
-  const FormLoginController({super.key, 
+  const FormAuthController({
+    super.key,
     this.controller,
     this.fieldKey,
     this.isPasswordField,
@@ -28,10 +28,10 @@ class FormLoginController extends StatefulWidget {
   });
 
   @override
-  State<FormLoginController> createState() => _FormLoginControllerState();
+  State<FormAuthController> createState() => _FormAuthControllerState();
 }
 
-class _FormLoginControllerState extends State<FormLoginController> {
+class _FormAuthControllerState extends State<FormAuthController> {
   bool _obscureText = true;
 
   @override
@@ -69,7 +69,8 @@ class _FormLoginControllerState extends State<FormLoginController> {
                   },
                   child: Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: _obscureText == false ? Colors.blue : Colors.grey[400],
+                    color:
+                        _obscureText == false ? Colors.blue : Colors.grey[400],
                   ),
                 )
               : null,

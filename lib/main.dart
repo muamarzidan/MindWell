@@ -4,12 +4,10 @@ import 'package:mindwell/common/splash_screen.dart';
 import 'package:mindwell/features/login/login_screen.dart';
 import 'firebase_options.dart';
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform
-    );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MindWellApp());
 }
 
@@ -18,12 +16,10 @@ class MindWellApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp( 
+    return const MaterialApp(
       title: "MindWell",
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(
-        child: LoginScreen() 
-      ),
+      home: SplashScreen(child: LoginScreen()),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/features/controllers/form_login_controller.dart';
+import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
+import 'package:mindwell/features/login/login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key});
@@ -31,7 +32,22 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 child: const SizedBox(
                   height: 50,
-                  child: FormLoginController(
+                  child: FormAuthController(
+                    hintText: "Username",
+                    isPasswordField: false,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const SizedBox(
+                  height: 50,
+                  child: FormAuthController(
                     hintText: "Email",
                     isPasswordField: false,
                   ),
@@ -46,7 +62,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 child: const SizedBox(
                   height: 50,
-                  child: FormLoginController(
+                  child: FormAuthController(
                     hintText: "Password",
                     isPasswordField: true,
                   ),
@@ -61,7 +77,7 @@ class RegisterScreen extends StatelessWidget {
                     //Action
                   },
                   child: const Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: "Poppins",
@@ -70,6 +86,38 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => const LoginScreen()),
+                      );
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

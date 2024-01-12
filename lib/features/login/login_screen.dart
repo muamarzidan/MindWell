@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/features/controllers/form_login_controller.dart';
+import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
+import 'package:mindwell/features/register/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key});
@@ -31,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: const SizedBox(
                   height: 50,
-                  child: FormLoginController(
+                  child: FormAuthController(
                     hintText: "Email",
                     isPasswordField: false,
                   ),
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: const SizedBox(
                   height: 50,
-                  child: FormLoginController(
+                  child: FormAuthController(
                     hintText: "Password",
                     isPasswordField: true,
                   ),
@@ -70,6 +71,38 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (_) => const RegisterScreen()),
+                      );
+                    },
+                    child: const Text(
+                      "Register",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
