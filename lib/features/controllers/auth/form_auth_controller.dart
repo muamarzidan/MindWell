@@ -38,12 +38,12 @@ class _FormAuthControllerState extends State<FormAuthController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.grey[200], // Ganti warna background
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
         style: const TextStyle(
-          color: AppColors.primaryColor,
+          color: Colors.black,
           fontSize: 18,
         ),
         controller: widget.controller,
@@ -53,12 +53,14 @@ class _FormAuthControllerState extends State<FormAuthController> {
         validator: widget.validator,
         onFieldSubmitted: widget.onFieldSubmitted,
         decoration: InputDecoration(
-          border: InputBorder.none,
+          border: const UnderlineInputBorder(),
           filled: true,
+          fillColor: Colors.white, // Ganti warna background
           hintText: widget.hintText,
-          hintStyle: TextStyle(
-            color: Colors.grey[400],
-            fontSize: 18,
+          hintStyle: const TextStyle(
+            color: AppColors.descriptionColor,
+            fontWeight: FontWeight.normal,
+            fontSize: 14,
           ),
           suffixIcon: widget.isPasswordField == true
               ? GestureDetector(
@@ -69,8 +71,7 @@ class _FormAuthControllerState extends State<FormAuthController> {
                   },
                   child: Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color:
-                        _obscureText == false ? Colors.blue : Colors.grey[400],
+                    color: _obscureText == false ? Colors.grey : Colors.black,
                   ),
                 )
               : null,
@@ -78,4 +79,50 @@ class _FormAuthControllerState extends State<FormAuthController> {
       ),
     );
   }
+
+
+
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       color: Colors.grey,
+  //       borderRadius: BorderRadius.circular(10),
+  //     ),
+  //     child: TextFormField(
+  //       style: const TextStyle(
+  //         color: AppColors.primaryColor,
+  //         fontSize: 18,
+  //       ),
+  //       controller: widget.controller,
+  //       key: widget.fieldKey,
+  //       obscureText: widget.isPasswordField == true ? _obscureText : false,
+  //       onSaved: widget.onSaved,
+  //       validator: widget.validator,
+  //       onFieldSubmitted: widget.onFieldSubmitted,
+  //       decoration: InputDecoration(
+  //         border: InputBorder.none,
+  //         filled: true,
+  //         hintText: widget.hintText,
+  //         hintStyle: TextStyle(
+  //           color: Colors.grey[400],
+  //           fontSize: 18,
+  //         ),
+  //         suffixIcon: widget.isPasswordField == true
+  //             ? GestureDetector(
+  //                 onTap: () {
+  //                   setState(() {
+  //                     _obscureText = !_obscureText;
+  //                   });
+  //                 },
+  //                 child: Icon(
+  //                   _obscureText ? Icons.visibility_off : Icons.visibility,
+  //                   color:
+  //                       _obscureText == false ? Colors.blue : Colors.grey[400],
+  //                 ),
+  //               )
+  //             : null,
+  //       ),
+  //     ),
+  //   );
+  // }
 }

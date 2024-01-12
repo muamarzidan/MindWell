@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
 import 'package:mindwell/features/controllers/auth/firebase_auth_controller.dart';
 import 'package:mindwell/features/login/login_screen.dart';
+import 'package:mindwell/theme/color.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  
+
   final FirebaseAuthController _auth = FirebaseAuthController();
 
   TextEditingController _usernameController = TextEditingController();
@@ -32,68 +33,71 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Mind",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Well",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),const SizedBox(height: 15),
               const Text(
-                "MindWell",
+                "Welcome to Back",
                 style: TextStyle(
-                  fontSize: 50,
+                  fontSize: 30,
                   fontFamily: "Poppins",
-                  fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: SizedBox(
-                  height: 50,
-                  child: FormAuthController(
-                    controller: _usernameController,
-                    hintText: "Username",
-                    isPasswordField: false,
-                  ),
+              const SizedBox(height: 5),
+              const Text(
+                "return to being a quality person",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: "Poppins",
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: SizedBox(
-                  height: 50,
-                  child: FormAuthController(
-                    controller: _emailController,
-                    hintText: "Email",
-                    isPasswordField: false,
-                  ),
-                ),
+              FormAuthController(
+                controller: _emailController,
+                hintText: "Username",
+                isPasswordField: false,
               ),
               const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: SizedBox(
-                  height: 50,
-                  child: FormAuthController(
-                    controller: _passwordController,
-                    hintText: "Password",
-                    isPasswordField: true,
-                  ),
-                ),
+              FormAuthController(
+                controller: _emailController,
+                hintText: "Enter your email address",
+                isPasswordField: false,
+              ),
+              const SizedBox(height: 20),
+              FormAuthController(
+                controller: _passwordController,
+                hintText: "Enter your password",
+                isPasswordField: false,
               ),
               const SizedBox(height: 20),
               GestureDetector(
@@ -104,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: double.infinity,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Center(
@@ -125,26 +129,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Don't have an account?",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontFamily: "Poppins",
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  GestureDetector(
-                    onTap: () {
+                  TextButton(
+                    onPressed: () {
                       Navigator.pushReplacementNamed(context, "/login");
                     },
                     child: const Text(
-                      "Login",
+                      "Now Login",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 14,
                         fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primaryColor,
                       ),
                     ),
                   ),
@@ -167,7 +170,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       print("Berhasil register");
       Navigator.pushReplacementNamed(context, "/home");
     } else {
-        print("Gagal register");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Gagal register"),
+        ),
+      );
     }
   }
 }

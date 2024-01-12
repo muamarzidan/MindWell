@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
               text: const TextSpan(
                 children: [
                   TextSpan(
-                    text: "Mindd",
+                    text: "Mind",
                     style: TextStyle(
                       fontSize: 50,
                       fontFamily: "Poppins",
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
                     ),
                   ),
                   TextSpan(
-                    text: "Welll",
+                    text: "Well",
                     style: TextStyle(
                       fontSize: 50,
                       fontFamily: "Poppins",
