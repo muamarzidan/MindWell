@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
+
+import 'package:mindwell/features/controllers/auth/firebase_auth_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
 import 'package:mindwell/features/register/register_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  final FirebaseAuthController _auth = FirebaseAuthController();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +51,10 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 50,
                   child: FormAuthController(
+                    controller: _emailController,
                     hintText: "Email",
                     isPasswordField: false,
                   ),
@@ -45,29 +67,36 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 50,
                   child: FormAuthController(
+                    controller: _passwordController,
                     hintText: "Password",
                     isPasswordField: true,
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () {
-                    //Action
-                  },
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  _login();
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -87,10 +116,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (_) => const RegisterScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, "/login");
                     },
                     child: const Text(
                       "Register",
@@ -110,4 +136,24 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+  void _login() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("Berhasil login");
+      Navigator.of(context).pushReplacementNamed("/home");
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Gagal login"),
+        ),
+      );
+    }
+  }
 }
+
+

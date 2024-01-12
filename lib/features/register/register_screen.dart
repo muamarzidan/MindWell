@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
+import 'package:mindwell/features/controllers/auth/firebase_auth_controller.dart';
 import 'package:mindwell/features/login/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -10,6 +14,20 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  
+  final FirebaseAuthController _auth = FirebaseAuthController();
+
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: SizedBox(
                   height: 50,
                   child: FormAuthController(
+                    controller: _usernameController,
                     hintText: "Username",
                     isPasswordField: false,
                   ),
@@ -54,6 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: SizedBox(
                   height: 50,
                   child: FormAuthController(
+                    controller: _emailController,
                     hintText: "Email",
                     isPasswordField: false,
                   ),
@@ -69,27 +89,33 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: SizedBox(
                   height: 50,
                   child: FormAuthController(
+                    controller: _passwordController,
                     hintText: "Password",
                     isPasswordField: true,
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Action
-                    // Gunakan _usernameController.text, _emailController.text, _passwordController.text
-                  },
-                  child: const Text(
-                    "Register",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  _register();
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Register",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -110,9 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(width: 10),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => const LoginScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, "/login");
                     },
                     child: const Text(
                       "Login",
@@ -132,4 +156,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
+
+  void _register() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    if (user != null) {
+      print("Berhasil register");
+      Navigator.pushReplacementNamed(context, "/home");
+    } else {
+        print("Gagal register");
+    }
+  }
 }
+
+

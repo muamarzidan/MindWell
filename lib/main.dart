@@ -1,8 +1,12 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:mindwell/common/home_screen.dart';
+import 'firebase_options.dart';
+
 import 'package:mindwell/common/splash_screen.dart';
 import 'package:mindwell/features/login/login_screen.dart';
-import 'firebase_options.dart';
+import 'package:mindwell/features/register/register_screen.dart';
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +20,17 @@ class MindWellApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "MindWell",
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(child: LoginScreen()),
+      routes: {
+        "/": (context) => const SplashScreen(child: 
+          LoginScreen()
+        ),
+        "/login": (context) => const LoginScreen(),
+        "/register": (context) => const RegisterScreen(),
+        "/home": (context) => const HomeScreen(),
+      },
     );
   }
 }
