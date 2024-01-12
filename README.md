@@ -4,6 +4,12 @@ MindWell adalah sebuah aplikasi yang memprioritaskan kesehatan mental para pengg
 
 # Screenshot
 ![Screenshot 2024-01-12 233218](https://github.com/muamarzidan/MindWell/assets/89593258/a3b5a82d-93d5-41a8-82cc-2f3208ffd128)
+![Screenshot 2024-01-12 233236](https://github.com/muamarzidan/MindWell/assets/89593258/68423d5d-d541-44c9-b024-8cd69c25df92)
+![Screenshot 2024-01-12 233248](https://github.com/muamarzidan/MindWell/assets/89593258/c0a2856e-7678-4b6a-a690-5654aeb527d8)
+
+untuk home ini optional, karena di sequence itu fokus ke login
+![Screenshot 2024-01-12 233400](https://github.com/muamarzidan/MindWell/assets/89593258/66433312-de3d-4f00-b0eb-4cca78c37f04)
+
 
 
 ## Getting Started
