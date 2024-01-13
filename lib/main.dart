@@ -23,10 +23,8 @@ class MindWellApp extends StatelessWidget {
     return MaterialApp(
       title: "MindWell",
       debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
       routes: {
-        "/": (context) => const SplashScreen(child: 
-          LoginScreen()
-        ),
         "/login": (context) => const LoginScreen(),
         "/register": (context) => const RegisterScreen(),
         "/home": (context) => const HomeScreen(),

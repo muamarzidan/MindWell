@@ -1,25 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mindwell/features/auth/firebase_auth_controller.dart';
 // import 'package:mindwell/common/home_screen.dart';
 import 'package:mindwell/presentation/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key, required LoginScreen child}) : super(key: key);
+  // const SplashScreen({Key? key, required LoginScreen child}) : super(key: key);
+
+  // @override
+  // State<SplashScreen> createState() => _SplashScreenState();
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed('/login');
+      checkUserLoginStatus();
     });
+  }
+
+void checkUserLoginStatus() async {
+  User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      Navigator.pushReplacementNamed(context, "/home");
+    } else {
+      Navigator.pushReplacementNamed(context, "/login");
+    }
   }
 
   @override
@@ -28,6 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
   }
+
 
   @override
   Widget build(BuildContext context) {

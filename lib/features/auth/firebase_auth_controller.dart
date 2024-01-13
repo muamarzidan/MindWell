@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 class FirebaseAuthController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  get instance => null;
+
   Future<User?> signUpWithEmailAndPassword(String email, String password) async {
 
     try {
