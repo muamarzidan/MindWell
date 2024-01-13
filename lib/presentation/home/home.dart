@@ -191,7 +191,12 @@ class HomePage extends StatelessWidget {
                     Expanded(
                       flex: 25,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/main-testMentalHealth',
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.primaryColor,
                           shape: RoundedRectangleBorder(

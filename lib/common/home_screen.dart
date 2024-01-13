@@ -80,8 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.people),
+            label: 'Community',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
