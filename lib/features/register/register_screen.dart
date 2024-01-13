@@ -2,9 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
-import 'package:mindwell/features/controllers/auth/firebase_auth_controller.dart';
-import 'package:mindwell/features/login/login_screen.dart';
+import 'package:mindwell/features/auth/form_auth_controller.dart';
+import 'package:mindwell/features/auth/firebase_auth_controller.dart';
+import 'package:mindwell/features/login/login.dart';
 import 'package:mindwell/theme/color.dart';
 
 class RegisterScreen extends StatefulWidget {

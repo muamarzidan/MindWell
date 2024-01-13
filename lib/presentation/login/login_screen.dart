@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
-import 'package:mindwell/features/controllers/auth/firebase_auth_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mindwell/features/controllers/auth/form_auth_controller.dart';
-import 'package:mindwell/features/register/register_screen.dart';
+import 'package:mindwell/features/login/login.dart';
+import 'package:mindwell/features/auth/form_auth_controller.dart';
 import 'package:mindwell/theme/color.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,10 +14,20 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
 
-  final FirebaseAuthController _auth = FirebaseAuthController();
-
+   final Loginhandler loginLogic = Loginhandler();
+   
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
+  void _login() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    await loginLogic.loginWithEmailPassword(email, password, context);
+  }
+
+  void _loginWithGoogle() async {
+    await loginLogic.loginWithGoogle(context);
+  }
 
   @override
   void dispose() {
@@ -30,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -190,49 +197,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-  }
-
-  void _login() async {
-    String email = _emailController.text;
-    String password = _passwordController.text;
-
-    User? user = await _auth.signInWithEmailAndPassword(email, password);
-
-    if (user != null) {
-      print("Berhasil login");
-      Navigator.of(context).pushReplacementNamed("/home");
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Gagal login"),
-        ),
-      );
-    }
-  }
-
-  _loginWithGoogle()async{
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
-
-    try {
-      final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
-
-      if(googleSignInAccount != null){
-        final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleSignInAuthentication.accessToken,
-          idToken: googleSignInAuthentication.idToken,
-        );
-
-        await FirebaseAuth.instance.signInWithCredential(credential);
-        Navigator.of(context).pushReplacementNamed("/home");
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Gagal login"),
-        ),
-      );
-    }
   }
 }
 

@@ -4,7 +4,7 @@ import 'package:mindwell/common/home_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:mindwell/common/splash_screen.dart';
-import 'package:mindwell/features/login/login_screen.dart';
+import 'package:mindwell/presentation/login/login_screen.dart';
 import 'package:mindwell/features/register/register_screen.dart';
 
 

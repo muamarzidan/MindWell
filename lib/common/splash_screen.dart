@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:mindwell/common/home_screen.dart';
-import 'package:mindwell/features/login/login_screen.dart';
+import 'package:mindwell/presentation/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key, required LoginScreen child}) : super(key: key);
