@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:mindwell/theme/color.dart';
 
-
-
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -50,6 +48,58 @@ class HomePage extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 12,
                 color: AppColors.descriptionColor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _wideCardList(String imagePath, String title, String description) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              imagePath,
+              width: double.infinity,
+              height: 150,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: AppColors.secondaryColor,
+              ),
+            ),
+            const SizedBox(height: 5),
+            RichText(
+              text: TextSpan(
+                text: description,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.descriptionColor,
+                ),
+                children: const [
+                  TextSpan(
+                    text: ' Read More',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.primaryColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -241,7 +291,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          'Meditation',
+                          'Articles You Need',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -263,92 +313,16 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 5),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
-                      child: Row(
-                        children: [
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Everything has limit',
-                            'Helps reduce stress',
-                          ),
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Happiness',
-                            'Increase affection',
-                          ),
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Konsentrasi',
-                            'Provide support for mental',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Meditation',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
-                            color: AppColors.secondaryColor,
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            // Action
-                          },
-                          child: const Text(
-                            'See More',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: AppColors.primaryColor,
-                            ),
-                          ),
-                        ),
-                      ],
+                    _wideCardList(
+                      'assets/images/main/home/article-1.png',
+                      'Practical Strategies for Dealing with Everyday Stress',
+                      'Stress is an inevitable part of life, and finding effective ways to cope with it is crucial for our overall well-being. . .',
                     ),
                     const SizedBox(height: 5),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
-                      child: Row(
-                        children: [
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Everything has limit',
-                            'Helps reduce stress',
-                          ),
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Happiness',
-                            'Increase affection',
-                          ),
-                          _cardList(
-                            'assets/images/main/recommendation/comfort.png',
-                            'Konsentrasi',
-                            'Provide support for mental',
-                          ),
-                        ],
-                      ),
+                    _wideCardList(
+                      'assets/images/main/home/article-2.png',
+                      'Recognizing the Signs and Overcoming Anxiety',
+                      'Anxiety is a common and natural response to stress, but when it becomes overwhelming and persistent, it can interfere with. . .',
                     ),
                   ],
                 ),
@@ -360,3 +334,134 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+// const SizedBox(height: 20),
+//             Container(
+//               width: double.infinity,
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(10.0),
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.all(5.0),
+//                 child: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     Row(
+//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                       children: [
+//                         const Text(
+//                           'Meditation',
+//                           style: TextStyle(
+//                             fontSize: 16,
+//                             fontWeight: FontWeight.normal,
+//                             color: AppColors.secondaryColor,
+//                           ),
+//                         ),
+//                         TextButton(
+//                           onPressed: () {
+//                             // Action
+//                           },
+//                           child: const Text(
+//                             'See More',
+//                             style: TextStyle(
+//                               fontSize: 14,
+//                               color: AppColors.primaryColor,
+//                             ),
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                     const SizedBox(height: 5),
+//                     SingleChildScrollView(
+//                       scrollDirection: Axis.horizontal,
+//                       padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+//                       child: Row(
+//                         children: [
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Everything has limit',
+//                             'Helps reduce stress',
+//                           ),
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Happiness',
+//                             'Increase affection',
+//                           ),
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Konsentrasi',
+//                             'Provide support for mental',
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+//             Container(
+//               width: double.infinity,
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(10.0),
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.all(5.0),
+//                 child: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     Row(
+//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                       children: [
+//                         const Text(
+//                           'Meditation',
+//                           style: TextStyle(
+//                             fontSize: 16,
+//                             fontWeight: FontWeight.normal,
+//                             color: AppColors.secondaryColor,
+//                           ),
+//                         ),
+//                         TextButton(
+//                           onPressed: () {
+//                             // Action
+//                           },
+//                           child: const Text(
+//                             'See More',
+//                             style: TextStyle(
+//                               fontSize: 14,
+//                               color: AppColors.primaryColor,
+//                             ),
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                     const SizedBox(height: 5),
+//                     SingleChildScrollView(
+//                       scrollDirection: Axis.horizontal,
+//                       padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+//                       child: Row(
+//                         children: [
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Everything has limit',
+//                             'Helps reduce stress',
+//                           ),
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Happiness',
+//                             'Increase affection',
+//                           ),
+//                           _cardList(
+//                             'assets/images/main/recommendation/comfort.png',
+//                             'Konsentrasi',
+//                             'Provide support for mental',
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),

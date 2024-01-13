@@ -77,6 +77,8 @@ flutter:
     - assets/images/logo/logo_notification.png
     #home
     - assets/images/main/home/brain.png
+    - assets/images/main/home/article-1.png
+    - assets/images/main/home/article-2.png
     #recommendation
     - assets/images/main/recommendation/comfort.png
     - assets/images/main/recommendation/comfort.png
