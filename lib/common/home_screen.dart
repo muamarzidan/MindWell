@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:mindwell/components/appbar.dart';
 import 'package:mindwell/theme/color.dart';
-import 'package:mindwell/presentation/home/home.dart'; // Import ScreenOne
+import 'package:mindwell/components/appbar.dart';
+import 'package:mindwell/presentation/home/home.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

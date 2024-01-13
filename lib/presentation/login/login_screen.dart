@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:mindwell/theme/color.dart';
 import 'package:mindwell/features/login/login.dart';
 import 'package:mindwell/features/auth/form_auth_controller.dart';
-import 'package:mindwell/theme/color.dart';
+
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,9 +15,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final Loginhandler loginLogic = Loginhandler();
 
-   final Loginhandler loginLogic = Loginhandler();
-   
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -145,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        FontAwesomeIcons.google, 
+                        FontAwesomeIcons.google,
                         color: Colors.red,
                         size: 20,
                       ),
@@ -199,5 +200,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-

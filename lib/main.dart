@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:mindwell/common/home_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:mindwell/common/splash_screen.dart';
+import 'package:mindwell/common/home_screen.dart';
 import 'package:mindwell/presentation/login/login_screen.dart';
 import 'package:mindwell/features/register/register_screen.dart';
+
 
 
 Future main() async {

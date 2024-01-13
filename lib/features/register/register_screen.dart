@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:mindwell/theme/color.dart';
 import 'package:mindwell/features/auth/form_auth_controller.dart';
 import 'package:mindwell/features/auth/firebase_auth_controller.dart';
-import 'package:mindwell/features/login/login.dart';
-import 'package:mindwell/theme/color.dart';
+
+
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -15,7 +16,6 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
   final FirebaseAuthController _auth = FirebaseAuthController();
 
   TextEditingController _usernameController = TextEditingController();
@@ -63,7 +63,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ],
                 ),
-              ),const SizedBox(height: 15),
+              ),
+              const SizedBox(height: 15),
               const Text(
                 "Welcome in MindWell",
                 style: TextStyle(
@@ -125,7 +126,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              //make 
+              //make
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -179,5 +180,3 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 }
-
-

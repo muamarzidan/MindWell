@@ -1,15 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mindwell/features/auth/firebase_auth_controller.dart';
-// import 'package:mindwell/common/home_screen.dart';
-import 'package:mindwell/presentation/login/login_screen.dart';
+
+
 
 class SplashScreen extends StatefulWidget {
-  // const SplashScreen({Key? key, required LoginScreen child}) : super(key: key);
-
-  // @override
-  // State<SplashScreen> createState() => _SplashScreenState();
   const SplashScreen({Key? key}) : super(key: key);
 
   @override

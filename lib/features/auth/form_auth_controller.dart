@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:mindwell/theme/color.dart';
+
+
 
 class FormAuthController extends StatefulWidget {
   final TextEditingController? controller;
@@ -38,7 +41,7 @@ class _FormAuthControllerState extends State<FormAuthController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[200], // Ganti warna background
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
@@ -55,7 +58,7 @@ class _FormAuthControllerState extends State<FormAuthController> {
         decoration: InputDecoration(
           border: const UnderlineInputBorder(),
           filled: true,
-          fillColor: Colors.white, // Ganti warna background
+          fillColor: Colors.white,
           hintText: widget.hintText,
           hintStyle: const TextStyle(
             color: AppColors.descriptionColor,
@@ -79,50 +82,4 @@ class _FormAuthControllerState extends State<FormAuthController> {
       ),
     );
   }
-
-
-
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     decoration: BoxDecoration(
-  //       color: Colors.grey,
-  //       borderRadius: BorderRadius.circular(10),
-  //     ),
-  //     child: TextFormField(
-  //       style: const TextStyle(
-  //         color: AppColors.primaryColor,
-  //         fontSize: 18,
-  //       ),
-  //       controller: widget.controller,
-  //       key: widget.fieldKey,
-  //       obscureText: widget.isPasswordField == true ? _obscureText : false,
-  //       onSaved: widget.onSaved,
-  //       validator: widget.validator,
-  //       onFieldSubmitted: widget.onFieldSubmitted,
-  //       decoration: InputDecoration(
-  //         border: InputBorder.none,
-  //         filled: true,
-  //         hintText: widget.hintText,
-  //         hintStyle: TextStyle(
-  //           color: Colors.grey[400],
-  //           fontSize: 18,
-  //         ),
-  //         suffixIcon: widget.isPasswordField == true
-  //             ? GestureDetector(
-  //                 onTap: () {
-  //                   setState(() {
-  //                     _obscureText = !_obscureText;
-  //                   });
-  //                 },
-  //                 child: Icon(
-  //                   _obscureText ? Icons.visibility_off : Icons.visibility,
-  //                   color:
-  //                       _obscureText == false ? Colors.blue : Colors.grey[400],
-  //                 ),
-  //               )
-  //             : null,
-  //       ),
-  //     ),
-  //   );
-  // }
 }
