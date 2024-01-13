@@ -28,6 +28,7 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       leading: widget.profileIcon.isNotEmpty
           ? IconButton(
               icon: ClipOval(
