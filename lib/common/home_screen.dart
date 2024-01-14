@@ -84,12 +84,12 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Community',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
+            icon: Icon(Icons.health_and_safety_outlined),
+            label: 'Counseling',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.more_time_sharp),
+            label: 'Schedule',
           ),
         ],
       ),
