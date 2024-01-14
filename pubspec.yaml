@@ -36,8 +36,10 @@ dependencies:
   cloud_firestore: ^4.14.0
   firebase_auth: ^4.16.0
   firebase_storage: ^11.6.0
-  font_awesome_flutter: ^10.6.0
+  font_awesome_flutter: ^10.4.0
   google_sign_in: ^6.1.4
+  smooth_page_indicator: ^1.1.0
+
   
 
 
@@ -83,6 +85,11 @@ flutter:
     - assets/images/main/recommendation/comfort.png
     - assets/images/main/recommendation/comfort.png
     - assets/images/main/recommendation/happines.png
+     #introPage
+    - assets/images/main/introPage/IntroPage1.png
+    - assets/images/main/introPage/IntroPage2.png
+    - assets/images/main/introPage/IntroPage3.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
