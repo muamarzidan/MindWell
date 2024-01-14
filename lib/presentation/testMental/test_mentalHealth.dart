@@ -164,7 +164,7 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
           child: const Text('Back'),
         ),
         ElevatedButton(
-          onPressed: () {
+          onPressed: () { 
             if (_currentPage == _questions.length - 1) {
               Navigator.pushReplacementNamed(context, '/splash');
             } else {
