@@ -56,7 +56,6 @@ class ConfirmationTestMentalHealth extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Pergi ke halaman konsultasi
                     Navigator.pushReplacementNamed(context, '/konsultasi');
                   },
                   child: const Text('Yes'),
@@ -64,7 +63,6 @@ class ConfirmationTestMentalHealth extends StatelessWidget {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Pergi ke halaman test pertanyaan
                     Navigator.pushReplacementNamed(context, '/test-mental-health');
                   },
                   child: const Text('No'),

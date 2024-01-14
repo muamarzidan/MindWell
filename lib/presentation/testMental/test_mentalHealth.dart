@@ -166,7 +166,7 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
         ElevatedButton(
           onPressed: () { 
             if (_currentPage == _questions.length - 1) {
-              Navigator.pushReplacementNamed(context, '/splash');
+              Navigator.pushReplacementNamed(context, '/result-test-mental-health');
             } else {
               _pageController.nextPage(
                 duration: const Duration(milliseconds: 500),
