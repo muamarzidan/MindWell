@@ -6,7 +6,7 @@ import 'package:mindwell/theme/color.dart';
 
 class AppBarPrimary extends StatefulWidget implements PreferredSizeWidget {
   final String username;
-  final String description; // Teks kedua di bagian tengah
+  final String description;
   final Function()? profileIconTap;
   final String profileIcon;
   final String? notificationIcon;
@@ -79,16 +79,10 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
               height: 25.0,
               ),
             onPressed: () {
-              // Perform action for notification icon
+              Navigator.pushNamed(context, '/notification');
             },
           ),
       ],
-      // shape: const Border(
-      //   bottom: BorderSide(
-      //     color: Colors.black,
-      //     width: 1,
-      //   ),
-      // ),
     );
   }
 }
