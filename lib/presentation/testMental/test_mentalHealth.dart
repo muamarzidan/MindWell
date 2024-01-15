@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/theme/color.dart';
 
 class MentalHealthTestPage extends StatefulWidget {
   const MentalHealthTestPage({Key? key}) : super(key: key);
@@ -11,20 +12,19 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
   PageController _pageController = PageController();
   int _currentPage = 0;
   List<String> _questions = [
-    'Question 1',
-    'Question 2',
-    'Question 3',
-    'Question 4',
-    'Question 5',
-    'Question 6',
-    'Question 7',
-    'Question 8',
-    'Question 9',
-    'Question 10',
-    'Feedback',
+    'How high are your stress levels right now?',
+    'Are you experiencing symptoms of anxiety or depression?',
+    'How is your sleep quality?',
+    'To what extent do you feel balanced between work and personal life?',
+    'Do you have realistic goals and expectations?',
+    'What is your self-esteem level?',
+    'Have you or people around you noticed drastic changes in your behavior or mood?',
+    'Do you use addictive substances such as alcohol or drugs?',
+    'Pertanyaan 9',
+    'Pertanyaan 10',
+    'What do you expect after you get our service?',
   ];
 
-  // List untuk menyimpan pilihan jawaban yang dipilih oleh pengguna
   List<String?> _selectedOptions = List.filled(11, null);
 
   @override
@@ -33,14 +33,13 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mental Health Test'),
         automaticallyImplyLeading: false,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4),
           child: LinearProgressIndicator(
             value: progress,
             backgroundColor: Colors.grey[300],
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+            valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
           ),
         ),
       ),
@@ -72,36 +71,36 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
   }
 
   Widget _buildQuestionCard(String question, int index) {
-    return Card(
-      elevation: 5,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+  return Card(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(1),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            question,
+            style: const TextStyle(fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 20),
+          _currentPage == 10 ? _buildFeedbackBox() : _buildOptions(index),
+        ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              question,
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            _currentPage == 10 ? _buildFeedbackBox() : _buildOptions(index),
-          ],
-        ),
-      ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildOptions(int questionIndex) {
     return Column(
       children: [
-        _buildOption('Option 1', questionIndex),
-        _buildOption('Option 2', questionIndex),
-        _buildOption('Option 3', questionIndex),
-        _buildOption('Option 4', questionIndex),
-        _buildOption('Option 5', questionIndex),
+        _buildOption('Opsi 1', questionIndex),
+        _buildOption('Opsi 2', questionIndex),
+        _buildOption('Opsi 3', questionIndex),
+        _buildOption('Opsi 4', questionIndex),
+        _buildOption('Opsi 5', questionIndex),
       ],
     );
   }
@@ -115,13 +114,14 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
       decoration: BoxDecoration(
         color: isSelected ? Colors.blue : Colors.white,
         border: Border.all(
-          color: Colors.grey,
+          color: const Color.fromARGB(255, 181, 181, 181),
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
         title: Text(
+          textAlign: TextAlign.center,
           optionText,
           style: TextStyle(
             color: isSelected ? Colors.white : Colors.black,
@@ -141,8 +141,8 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
       child: TextField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          labelText: 'Feedback',
         ),
+        maxLines: 5,
         onChanged: (feedback) {},
       ),
     );
@@ -152,19 +152,23 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ElevatedButton(
-          onPressed: _currentPage == 0
-              ? null
-              : () {
-                  _pageController.previousPage(
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  );
-                },
-          child: const Text('Back'),
+  ElevatedButton(
+    onPressed: _currentPage == 0
+        ? null
+        : () {
+            _pageController.previousPage(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          },
+    style: ElevatedButton.styleFrom(
+      foregroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+    ),
+    child: const Icon(Icons.arrow_back, color: AppColors.primaryColor),
         ),
         ElevatedButton(
-          onPressed: () { 
+          onPressed: () {
             if (_currentPage == _questions.length - 1) {
               Navigator.pushReplacementNamed(context, '/result-test-mental-health');
             } else {
@@ -174,9 +178,13 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
               );
             }
           },
+          style: ElevatedButton.styleFrom(
+            foregroundColor: AppColors.primaryColor,
+            backgroundColor: AppColors.primaryColor,
+          ),
           child: _currentPage == _questions.length - 1
-              ? const Text('Submit')
-              : const Text('Next'),
+              ? const Text('Submit', style: TextStyle(color: Colors.white))
+              : const Icon(Icons.arrow_forward, color: Colors.white),
         ),
       ],
     );
