@@ -85,10 +85,12 @@ flutter:
     - assets/images/main/recommendation/comfort.png
     - assets/images/main/recommendation/comfort.png
     - assets/images/main/recommendation/happines.png
-     #introPage
+    #intro-page
     - assets/images/main/introPage/IntroPage1.png
     - assets/images/main/introPage/IntroPage2.png
     - assets/images/main/introPage/IntroPage3.png
+    #test-mental-health
+    - assets/images/main/testMental/icon-mental-health.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

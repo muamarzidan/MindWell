@@ -142,7 +142,7 @@ class HomePage extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(40.0),
                   ),
-                  hintText: 'Search Psychologist',
+                  hintText: 'Search Psychologist . . .',
                   prefixIcon: const Icon(Icons.search),
                 ),
               ),

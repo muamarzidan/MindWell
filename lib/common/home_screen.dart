@@ -70,6 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
+      floatingActionButton: _buildFAB(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
@@ -89,10 +91,43 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_time_sharp),
-            label: 'Schedule',
+            label: 'Schddedule',
           ),
         ],
       ),
     );
   }
+
+  Widget _buildFAB() {
+  return Stack(
+    children: [
+      Positioned(
+        bottom: 30,
+        left: MediaQuery.of(context).size.width / 2 - 30,
+        child: Container(
+          width: 60,
+          height: 60,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.red,
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: 40,
+        left: MediaQuery.of(context).size.width / 2 - 20,
+        child: Container(
+          width: 40,
+          height: 40,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.yellow,
+          ),
+        ),
+      ),
+    ],
+  );
 }
+}
+
+
