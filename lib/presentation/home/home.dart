@@ -194,7 +194,7 @@ class HomePage extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(
                             context,
-                            '/main-testMentalHealth',
+                            '/main-test',
                           );
                         },
                         style: ElevatedButton.styleFrom(

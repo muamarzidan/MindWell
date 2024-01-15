@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
 
@@ -37,10 +39,10 @@ class MainTestMentalHealth extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.secondaryFontColor),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 100),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/confirmation-testMentalHealth');
+                Navigator.pushReplacementNamed(context, '/confirmation-test');
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(16.0),
@@ -69,46 +71,46 @@ class MainTestMentalHealth extends StatelessWidget {
 
 
 
-class ConfirmationTestMentalHealth extends StatelessWidget {
-  const ConfirmationTestMentalHealth({Key? key}) : super(key: key);
+// class ConfirmationTestMentalHealth extends StatelessWidget {
+//   const ConfirmationTestMentalHealth({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Confirmation'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Apakah Anda pernah melakukan test kesehatan mental sebelumnya?',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/konsultasi');
-                  },
-                  child: const Text('Yes'),
-                ),
-                const SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/test-mental-health');
-                  },
-                  child: const Text('No'),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         automaticallyImplyLeading: false,
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             const Text(
+//               'Have you ever done a mental health test directly?',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(fontSize: 18),
+//             ),
+//             const SizedBox(height: 20),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 ElevatedButton(
+//                   onPressed: () {
+//                     Navigator.pushReplacementNamed(context, '/konsultasi');
+//                   },
+//                   child: const Text('Yes'),
+//                 ),
+//                 const SizedBox(width: 20),
+//                 ElevatedButton(
+//                   onPressed: () {
+//                     Navigator.pushReplacementNamed(context, '/test-mental-health');
+//                   },
+//                   child: const Text('No'),
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

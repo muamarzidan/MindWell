@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mindwell/presentation/stepPage/step_page.dart';
+import 'package:mindwell/presentation/testMental/confirmation_test_mentalHealt.dart';
 import 'package:mindwell/presentation/testMental/result_test_mentalHealth.dart';
 import 'package:mindwell/presentation/testMental/test_mentalHealth.dart';
 import 'firebase_options.dart';
@@ -33,8 +34,8 @@ class MindWellApp extends StatelessWidget {
         "/login": (context) => const LoginScreen(),
         "/register": (context) => const RegisterScreen(),
         "/home": (context) => const HomeScreen(),
-        "/main-testMentalHealth": (context) => const MainTestMentalHealth(),
-        "/confirmation-testMentalHealth": (context) => const ConfirmationTestMentalHealth(),
+        "/main-test": (context) => const MainTestMentalHealth(),
+        "/confirmation-test": (context) => const ConfirmationTestMentalHealth(),
         "/test-mental-health": (context) => const MentalHealthTestPage(),
         "/result-test-mental-health": (context) => const ResultTestMentalHealth(),
       },
