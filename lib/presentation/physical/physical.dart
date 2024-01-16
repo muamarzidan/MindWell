@@ -29,6 +29,7 @@ class _PhysicalScreenState extends State<PhysicalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         scrolledUnderElevation: 0,
         elevation: 0,
