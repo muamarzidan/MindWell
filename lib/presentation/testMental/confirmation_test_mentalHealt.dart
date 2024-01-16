@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
 
+
+
 class ConfirmationTestMentalHealth extends StatelessWidget {
   const ConfirmationTestMentalHealth({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
       ),

@@ -1,7 +1,7 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
+
+
 
 class MainTestMentalHealth extends StatelessWidget {
   const MainTestMentalHealth({Key? key}) : super(key: key);
@@ -9,7 +9,12 @@ class MainTestMentalHealth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
+      ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

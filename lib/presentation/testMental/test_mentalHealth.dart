@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
 
+
+
 class MentalHealthTestPage extends StatefulWidget {
   const MentalHealthTestPage({Key? key}) : super(key: key);
 
@@ -32,7 +34,9 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
     double progress = (_currentPage + 1) / _questions.length;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4),
