@@ -12,12 +12,12 @@ class _MeditationScreenState extends State<MeditationScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        scrolledUnderElevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
-        iconTheme: const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
-        actions: const [
-          
-        ],
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -35,7 +35,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Meditation Recommendations',
+                    'Basic Meditation',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -56,8 +56,8 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 itemCount: 2,
                 itemBuilder: (context, index) {
                   List<String> titles = [
-                    'Burn Out',
-                    'Happiness',
+                    'Breathing Meditation',
+                    'Body Awareness',
                   ];
 
                   List<String> descriptions = [
@@ -66,8 +66,105 @@ class _MeditationScreenState extends State<MeditationScreen> {
                   ];
 
                   List<String> imagePaths = [
-                    'assets/images/main/home/recom-meditation-1.png',
-                    'assets/images/main/home/recom-meditation-2.png',
+                    'assets/images/main/meditation/breathing.jpg',
+                    'assets/images/main/meditation/body-awarnes.jpg',
+                  ];
+
+                  return _CardListmeditation(
+                    imagePaths[index],
+                    titles[index],
+                    descriptions[index],
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Advanced Meditation',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primaryFontColor,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                ),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  List<String> titles = [
+                    'Cosmic Meditation',
+                    'Kundalini Meditation',
+                  ];
+
+                  List<String> descriptions = [
+                    'Helps reduce stress',
+                    'Increase affection',
+                  ];
+
+                  List<String> imagePaths = [
+                    'assets/images/main/meditation/cosmic.jpg',
+                    'assets/images/main/meditation/kudalini.jpg',
+                  ];
+
+                  return _CardListmeditation(
+                    imagePaths[index],
+                    titles[index],
+                    descriptions[index],
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Short Meditation',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primaryFontColor,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                ),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  List<String> titles = [
+                    'Everything has a limit',
+                    'Happiness',
+                    'Concentration',
+                  ];
+
+                  List<String> descriptions = [
+                    'Helps reduce stress',
+                    'Increase affection',
+                    'Provide support for mental',
+                  ];
+
+                  List<String> imagePaths = [
+                    'assets/images/main/meditation/everything.png',
+                    'assets/images/main/meditation/happines.png',
+                    'assets/images/main/meditation/concentration.png',
                   ];
 
                   return _CardListmeditation(

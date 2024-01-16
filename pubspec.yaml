@@ -103,6 +103,14 @@ flutter:
     - assets/images/main/recommendation/bycycle.png
     - assets/images/main/recommendation/aerobik.png
     - assets/images/main/recommendation/strech.png
+    #meditation
+    - assets/images/main/meditation/breathing.jpg
+    - assets/images/main/meditation/body-awarnes.jpg
+    - assets/images/main/meditation/cosmic.jpg
+    - assets/images/main/meditation/kudalini.jpg
+    - assets/images/main/meditation/everything.png
+    - assets/images/main/meditation/happines.png
+    - assets/images/main/meditation/concentration.png
     #article
     - assets/images/main/article/article-1.png
     - assets/images/main/article/article-2.png
