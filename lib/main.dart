@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mindwell/playground/video.dart';
+import 'package:mindwell/presentation/article/article-detail.dart';
+import 'package:mindwell/presentation/article/article.dart';
 import 'package:mindwell/presentation/notification/notification.dart';
 import 'package:mindwell/presentation/recomendation/recomendation.dart';
 import 'package:mindwell/presentation/stepPage/step_page.dart';
@@ -39,6 +41,8 @@ class MindWellApp extends StatelessWidget {
         "/home": (context) => const HomeScreen(),
         "/main-test": (context) => const MainTestMentalHealth(),
         "/recommendation": (context) => RecommendationScreen(),
+        "/article":(context) => ArticleScreen(),
+        "/article-detail":(context) => ArticleDetailScreen(),
         "/notification": (context) => const NotificationScreen(),
         "/playground": (context) => VideoScreen (youtubeVideoId: "FrlxZOCYY0w", thumbnailUrl: "https://github.com/muamarzidan/MindWell/assets/89593258/04146a43-0a46-484e-be51-c3aa8c2a463f",),
         "/confirmation-test": (context) => const ConfirmationTestMentalHealth(),

@@ -78,18 +78,26 @@ flutter:
     - assets/images/logo/logo_foreground_app.png
     - assets/images/logo/logo_base_profile.png
     - assets/images/logo/logo_notification.png
-    #home
-    - assets/images/main/home/brain.png
-    - assets/images/main/home/article-1.png
-    - assets/images/main/home/article-2.png
-    #recommendation
-    - assets/images/main/recommendation/comfort.png
-    - assets/images/main/recommendation/comfort.png
-    - assets/images/main/recommendation/happines.png
     #intro-page
     - assets/images/main/introPage/IntroPage1.png
     - assets/images/main/introPage/IntroPage2.png
     - assets/images/main/introPage/IntroPage3.png
+    #home
+    - assets/images/main/home/brain.png
+    - assets/images/main/home/article-1.png
+    - assets/images/main/home/article-2.png
+    - assets/images/main/home/article-3.png
+    - assets/images/main/home/article-4.png
+    #recommendation
+    - assets/images/main/recommendation/comfort.png
+    - assets/images/main/recommendation/comfort.png
+    - assets/images/main/recommendation/happines.png
+    #article
+    - assets/images/main/article/article-1.png
+    - assets/images/main/article/article-2.png
+    - assets/images/main/article/article-3.png
+    - assets/images/main/article/article-4.png
+
     #test-mental-health
     - assets/images/main/testMental/icon-mental-health.png
 

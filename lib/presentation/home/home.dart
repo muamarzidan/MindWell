@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/presentation/article/article-detail.dart';
 
 import 'package:mindwell/theme/color.dart';
+import 'package:mindwell/presentation/article/article.dart';
+
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -56,53 +60,58 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _wideCardList(String imagePath, String title, String description) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              imagePath,
-              width: double.infinity,
-              height: 150,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: AppColors.secondaryColor,
+  Widget _ArticleCardList(String imagePath, String title, String description, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ArticleDetailScreen()));
+      },
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                imagePath,
+                width: double.infinity,
+                height: 130,
+                fit: BoxFit.cover,
               ),
-            ),
-            const SizedBox(height: 5),
-            RichText(
-              text: TextSpan(
-                text: description,
+              const SizedBox(height: 10),
+              Text(
+                title,
                 style: const TextStyle(
-                  fontSize: 14,
-                  color: AppColors.descriptionColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.secondaryColor,
                 ),
-                children: const [
-                  TextSpan(
-                    text: ' Read More',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.primaryColor,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 5),
+              RichText(
+                text: TextSpan(
+                  text: description,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: AppColors.descriptionColor,
+                  ),
+                  children: const [
+                    TextSpan(
+                      text: ' Read More',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.primaryColor,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -235,13 +244,13 @@ class HomePage extends StatelessWidget {
                           'Recommendations for you',
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.bold,
                             color: AppColors.secondaryColor,
                           ),
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/recommendation');
+                            //Action
                           },
                           child: const Text(
                             'See More',
@@ -284,9 +293,6 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             Container(
               width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Column(
@@ -299,13 +305,13 @@ class HomePage extends StatelessWidget {
                           'Articles You Need',
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.bold,
                             color: AppColors.secondaryColor,
                           ),
                         ),
                         TextButton(
                           onPressed: () {
-                            // Action
+                            Navigator.pushNamed(context, '/article');
                           },
                           child: const Text(
                             'See More',
@@ -317,17 +323,19 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 5),
-                    _wideCardList(
+                    const SizedBox(height: 0),
+                    _ArticleCardList(
                       'assets/images/main/home/article-1.png',
                       'Practical Strategies for Dealing with Everyday Stress',
                       'Stress is an inevitable part of life, and finding effective ways to cope with it is crucial for our overall well-being. . .',
+                      context,
                     ),
                     const SizedBox(height: 5),
-                    _wideCardList(
+                    _ArticleCardList(
                       'assets/images/main/home/article-2.png',
                       'Recognizing the Signs and Overcoming Anxiety',
                       'Anxiety is a common and natural response to stress, but when it becomes overwhelming and persistent, it can interfere with. . .',
+                      context,
                     ),
                   ],
                 ),
