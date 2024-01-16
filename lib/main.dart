@@ -4,7 +4,7 @@ import 'package:mindwell/playground/video.dart';
 import 'package:mindwell/presentation/article/article-detail.dart';
 import 'package:mindwell/presentation/article/article.dart';
 import 'package:mindwell/presentation/meditation/meditation.dart';
-import 'package:mindwell/presentation/notification/notification.dart';
+import 'package:mindwell/presentation/NotificationScreen.dart';
 import 'package:mindwell/presentation/physical/physical.dart';
 import 'package:mindwell/presentation/recomendation/recomendation.dart';
 import 'package:mindwell/presentation/stepPage/step_page.dart';
@@ -46,7 +46,7 @@ class MindWellApp extends StatelessWidget {
         "/physical-activity": (context) => PhysicalScreen(),
         "/article":(context) => ArticleScreen(),
         "/article-detail":(context) => ArticleDetailScreen(),
-        "/notification": (context) => const NotificationScreen(),
+        "/notification": (context) => NotificationScreen(),
         "/main-test": (context) => const MainTestMentalHealth(),
         "/confirmation-test": (context) => const ConfirmationTestMentalHealth(),
         "/test-mental-health": (context) => const MentalHealthTestPage(),
