@@ -10,14 +10,15 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
-        iconTheme: const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
-        actions: const [
-          
-        ],
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -104,6 +105,7 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
               color: AppColors.secondaryFontColor,
             ),
           ),
+          const SizedBox(height: 20),
         ],
       ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/presentation/article/article-detail.dart';
 import 'package:mindwell/theme/color.dart';
 
 class ArticleScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ArticleScreen()));
+            context, MaterialPageRoute(builder: (context) => ArticleDetailScreen()));
       },
       child: Container(
         width: double.infinity,
@@ -69,7 +70,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
@@ -87,32 +90,33 @@ class _ArticleScreenState extends State<ArticleScreen> {
               children: [
                 const SizedBox(height: 0),
                 _ArticleCardList(
-                  'assets/images/main/home/article-1.png',
+                  'assets/images/main/article/article-1.png',
                   'Practical Strategies for Dealing with Everyday Stress',
                   'Stress is an inevitable part of life, and finding effective ways to cope with it is crucial for our overall well-being. . .',
                   context,
                 ),
                 const SizedBox(height: 5),
                 _ArticleCardList(
-                  'assets/images/main/home/article-2.png',
+                  'assets/images/main/article/article-2.png',
                   'Recognizing the Signs and Overcoming Anxiety',
                   'Anxiety is a common and natural response to stress, but when it becomes overwhelming and persistent, it can interfere with. . .',
                   context,
                 ),
                 const SizedBox(height: 5),
                 _ArticleCardList(
-                  'assets/images/main/home/article-3.png',
+                  'assets/images/main/article/article-3.png',
                   'The Importance of Self-Care in Improving Your Mental Health',
                   'In the fast-paced world we live in, taking care of our mental health is essential for overall well-being. . .',
                   context,
                 ),
                 const SizedBox(height: 5),
                 _ArticleCardList(
-                  'assets/images/main/home/article-4.png',
+                  'assets/images/main/article/article-4.png',
                   'Overcoming Workplace Burnout: Tips and Tricks',
                   'In the demanding landscape of the modern workplace, burnout has become an all-too-common. . .',
                   context,
                 ),
+                const SizedBox(height: 20),
               ],
             ),
           ),
