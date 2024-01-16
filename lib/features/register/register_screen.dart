@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 20),
               FormAuthController(
-                controller: _emailController,
+                controller: _usernameController,
                 hintText: "Enter username",
                 isPasswordField: false,
               ),
@@ -98,7 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               FormAuthController(
                 controller: _passwordController,
                 hintText: "Enter your password",
-                isPasswordField: false,
+                isPasswordField: true,
               ),
               const SizedBox(height: 20),
               GestureDetector(

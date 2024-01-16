@@ -53,48 +53,30 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 ),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: 4,
+                itemCount: 2,
                 itemBuilder: (context, index) {
+                  List<String> titles = [
+                    'Burn Out',
+                    'Happiness',
+                  ];
+
+                  List<String> descriptions = [
+                    'Helps reduce stress',
+                    'Increase affection',
+                  ];
+
+                  List<String> imagePaths = [
+                    'assets/images/main/home/recom-meditation-1.png',
+                    'assets/images/main/home/recom-meditation-2.png',
+                  ];
+
                   return _CardListmeditation(
-                    'assets/images/main/recommendation/comfort.png',
-                    'Title ${index + 1}',
-                    'Description ${index + 1}',
+                    imagePaths[index],
+                    titles[index],
+                    descriptions[index],
                   );
                 },
               ),
-              const SizedBox(height: 40),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Physical Activity Recommendations',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primaryFontColor,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
-                ),
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  return _CardListPhysical(
-                    'assets/images/main/recommendation/comfort.png',
-                    'Title ${index + 1}',
-                    'Description ${index + 1}',
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -122,61 +104,7 @@ class _CardListmeditation extends StatelessWidget {
             color: const Color.fromARGB(90, 241, 241, 241).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 4,
-            offset: const Offset(2, 5)
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            imagePath,
-            height: 120,
-            width: 200,
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            description,
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.grey,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _CardListPhysical extends StatelessWidget {
-  final String imagePath;
-  final String title;
-  final String description;
-
-  const _CardListPhysical(this.imagePath, this.title, this.description);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: const Color.fromARGB(90, 241, 241, 241).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(2, 5)
+            offset: const Offset(2, 5),
           ),
         ],
       ),
