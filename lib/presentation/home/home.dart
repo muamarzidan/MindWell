@@ -250,7 +250,7 @@ class HomePage extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            //Action
+                            Navigator.pushNamed(context, '/recommendation');
                           },
                           child: const Text(
                             'See More',
