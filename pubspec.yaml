@@ -117,9 +117,11 @@ flutter:
     - assets/images/main/article/article-3.png
     - assets/images/main/article/article-4.png
     #physical
-    - assets/images/main/physical/physical-1.png
-    - assets/images/main/physical/physical-2.png
-    - assets/images/main/physical/physical-3.png
+    - assets/images/main/physical/aerobik.png
+    - assets/images/main/physical/bicycle.png
+    - assets/images/main/physical/dancer.png
+    - assets/images/main/physical/jogging.png
+    - assets/images/main/physical/strech.png
 
     #test-mental-health
     - assets/images/main/testMental/icon-mental-health.png
