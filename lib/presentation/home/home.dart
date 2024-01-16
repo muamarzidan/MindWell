@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: AppColors.secondaryColor,
+                color: AppColors.primaryFontColor,
               ),
             ),
             const SizedBox(height: 5),
@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.secondaryColor,
+                  color: AppColors.primaryFontColor,
                 ),
               ),
               const SizedBox(height: 5),
@@ -182,7 +182,7 @@ class HomePage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
-                              color: AppColors.secondaryColor,
+                              color: AppColors.primaryFontColor,
                             ),
                           ),
                           const SizedBox(height: 5),
@@ -245,7 +245,7 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.secondaryColor,
+                            color: AppColors.primaryFontColor,
                           ),
                         ),
                         TextButton(
@@ -293,6 +293,69 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             Container(
               width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Meditation',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryFontColor,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Action
+                          },
+                          child: const Text(
+                            'See More',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+                      child: Row(
+                        children: [
+                          _cardList(
+                            'assets/images/main/recommendation/comfort.png',
+                            'Everything has limit',
+                            'Helps reduce stress',
+                          ),
+                          _cardList(
+                            'assets/images/main/recommendation/comfort.png',
+                            'Happiness',
+                            'Increase affection',
+                          ),
+                          _cardList(
+                            'assets/images/main/recommendation/comfort.png',
+                            'Konsentrasi',
+                            'Provide support for mental',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Column(
@@ -306,7 +369,7 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.secondaryColor,
+                            color: AppColors.primaryFontColor,
                           ),
                         ),
                         TextButton(

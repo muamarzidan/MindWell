@@ -55,7 +55,7 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
                 fontSize: 15,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.bold,
-                color: AppColors.secondaryColor,
+                color: AppColors.primaryFontColor,
               ),
             ),
             Text(

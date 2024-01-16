@@ -36,7 +36,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.secondaryColor,
+                  color: AppColors.primaryFontColor,
                 ),
               ),
               const SizedBox(height: 5),
