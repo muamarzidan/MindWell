@@ -14,10 +14,9 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
-        iconTheme: const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
-        actions: const [
-          
-        ],
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -55,10 +54,31 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 4,
                 itemBuilder: (context, index) {
+                  List<String> titles = [
+                    'Burn Out',
+                    'Happiness',
+                    'Everything has a limit',
+                    'Concentration',
+                  ];
+
+                  List<String> descriptions = [
+                    'Helps reduce stress',
+                    'Increase affection',
+                    'Helps reduce stress',
+                    'Provide support for mental',
+                  ];
+
+                  List<String> imagePaths = [
+                    'assets/images/main/recommendation/burn.png',
+                    'assets/images/main/recommendation/happines.png',
+                    'assets/images/main/recommendation/everything.png',
+                    'assets/images/main/recommendation/concentration.png',
+                  ];
+
                   return _CardListmeditation(
-                    'assets/images/main/recommendation/comfort.png',
-                    'Title ${index + 1}',
-                    'Description ${index + 1}',
+                    titles[index],
+                    descriptions[index],
+                    imagePaths[index],
                   );
                 },
               ),
@@ -87,10 +107,31 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 4,
                 itemBuilder: (context, index) {
+                  List<String> titles = [
+                    'Burn Out',
+                    'Happiness',
+                    'Everything has a limit',
+                    'Concentration',
+                  ];
+
+                  List<String> descriptions = [
+                    'Helps reduce stress',
+                    'Increase affection',
+                    'Helps reduce stress',
+                    'Provide support for mental',
+                  ];
+
+                  List<String> imagePaths = [
+                    'assets/images/main/recommendation/jogging.png',
+                    'assets/images/main/recommendation/bycycle.png',
+                    'assets/images/main/recommendation/aerobik.png',
+                    'assets/images/main/recommendation/strech.png',
+                  ];
+
                   return _CardListPhysical(
-                    'assets/images/main/recommendation/comfort.png',
-                    'Title ${index + 1}',
-                    'Description ${index + 1}',
+                    titles[index],
+                    descriptions[index],
+                    imagePaths[index],
                   );
                 },
               ),
@@ -104,11 +145,11 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
 }
 
 class _CardListmeditation extends StatelessWidget {
-  final String imagePath;
   final String title;
   final String description;
+  final String imagePath;
 
-  const _CardListmeditation(this.imagePath, this.title, this.description);
+  const _CardListmeditation(this.title, this.description, this.imagePath);
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +163,7 @@ class _CardListmeditation extends StatelessWidget {
             color: const Color.fromARGB(90, 241, 241, 241).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 4,
-            offset: const Offset(2, 5)
+            offset: const Offset(2, 5),
           ),
         ],
       ),
@@ -158,11 +199,11 @@ class _CardListmeditation extends StatelessWidget {
 }
 
 class _CardListPhysical extends StatelessWidget {
-  final String imagePath;
   final String title;
   final String description;
+  final String imagePath;
 
-  const _CardListPhysical(this.imagePath, this.title, this.description);
+  const _CardListPhysical(this.title, this.description, this.imagePath);
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +217,7 @@ class _CardListPhysical extends StatelessWidget {
             color: const Color.fromARGB(90, 241, 241, 241).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 4,
-            offset: const Offset(2, 5)
+            offset: const Offset(2, 5),
           ),
         ],
       ),

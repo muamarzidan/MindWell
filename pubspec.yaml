@@ -84,19 +84,34 @@ flutter:
     - assets/images/main/introPage/IntroPage3.png
     #home
     - assets/images/main/home/brain.png
+    - assets/images/main/home/recom-meditation-1.png
+    - assets/images/main/home/recom-meditation-2.png
+    - assets/images/main/home/recom-meditation-3.png
+    - assets/images/main/home/meditation-1.png
+    - assets/images/main/home/meditation-3.png
+    - assets/images/main/home/physical-1.png
+    - assets/images/main/home/physical-2.png
+    - assets/images/main/home/physical-3.png
     - assets/images/main/home/article-1.png
     - assets/images/main/home/article-2.png
-    - assets/images/main/home/article-3.png
-    - assets/images/main/home/article-4.png
     #recommendation
-    - assets/images/main/recommendation/comfort.png
-    - assets/images/main/recommendation/comfort.png
+    - assets/images/main/recommendation/concentration.png
+    - assets/images/main/recommendation/burn.png
+    - assets/images/main/recommendation/everything.png
     - assets/images/main/recommendation/happines.png
+    - assets/images/main/recommendation/jogging.png
+    - assets/images/main/recommendation/bycycle.png
+    - assets/images/main/recommendation/aerobik.png
+    - assets/images/main/recommendation/strech.png
     #article
     - assets/images/main/article/article-1.png
     - assets/images/main/article/article-2.png
     - assets/images/main/article/article-3.png
     - assets/images/main/article/article-4.png
+    #physical
+    - assets/images/main/physical/physical-1.png
+    - assets/images/main/physical/physical-2.png
+    - assets/images/main/physical/physical-3.png
 
     #test-mental-health
     - assets/images/main/testMental/icon-mental-health.png

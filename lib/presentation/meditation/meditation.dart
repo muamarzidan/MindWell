@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/theme/color.dart';
 
-class RecommendationScreen extends StatefulWidget {
+class MeditationScreen extends StatefulWidget {
   @override
-  _RecommendationScreenState createState() => _RecommendationScreenState();
+  _MeditationScreenState createState() => _MeditationScreenState();
 }
 
-class _RecommendationScreenState extends State<RecommendationScreen> {
+class _MeditationScreenState extends State<MeditationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
