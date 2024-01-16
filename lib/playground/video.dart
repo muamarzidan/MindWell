@@ -10,7 +10,7 @@ class VideoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String videoUrl = "https://www.youtube.com/watch?v=$youtubeVideoId";
-    Duration videoDuration = Duration(minutes: 4, seconds: 21); // Ganti dengan durasi video yang sesungguhnya
+    Duration videoDuration = Duration(minutes: 4, seconds: 21);
 
     String formattedDuration =
         "${videoDuration.inMinutes}:${(videoDuration.inSeconds % 60).toString().padLeft(2, '0')}";
@@ -24,7 +24,6 @@ class VideoScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Video player widget
             YoutubePlayer(
               controller: YoutubePlayerController(
                 initialVideoId: youtubeVideoId,
@@ -36,7 +35,6 @@ class VideoScreen extends StatelessWidget {
               showVideoProgressIndicator: true,
             ),
             const SizedBox(height: 10),
-            // Durasi video di bawah video player
             Text(
               formattedDuration,
               style: TextStyle(
