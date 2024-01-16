@@ -99,35 +99,45 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildFAB() {
-  return Stack(
-    children: [
-      Positioned(
-        bottom: 30,
-        left: MediaQuery.of(context).size.width / 2 - 30,
-        child: Container(
-          width: 60,
-          height: 60,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.red,
+    return Stack(
+      children: [
+        Positioned(
+          bottom: 30,
+          left: MediaQuery.of(context).size.width / 2 - 30,
+          child: GestureDetector(
+            onTap: () {
+              // Navigation to /emergency
+              Navigator.pushNamed(context, '/emergency');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.red,
+              ),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
-      ),
-      Positioned(
-        bottom: 40,
-        left: MediaQuery.of(context).size.width / 2 - 20, 
-        child: Container(
-          width: 40,
-          height: 40,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.yellow,
+        Positioned(
+          bottom: 40,
+          left: MediaQuery.of(context).size.width / 2 - 20,
+          child: Container(
+            width: 40,
+            height: 40,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.yellow,
+            ),
           ),
         ),
-      ),
-    ],
-  );
-}
+      ],
+    );
+  }
 }
 
 

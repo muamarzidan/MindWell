@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
 class EmergencyScreen extends StatelessWidget {
+  const EmergencyScreen({Key? key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Emergency Screen'),
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: true,
+        iconTheme: const IconThemeData(size: 30.0, color: Colors.black),
+        actions: const [],
       ),
       body: Center(
         child: Padding(
@@ -16,30 +24,43 @@ class EmergencyScreen extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  // Action for Button 1
+                  // Action
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
-                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), 
+                  ),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  side: const BorderSide(color: Color.fromARGB(255, 155, 10, 0), width: 2),
+                  backgroundColor: const Color.fromARGB(255, 246, 0, 0),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text('Button 1'),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'Ambulance',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
-                  // Action for Button 2
+                  Navigator.pushNamed(context, '/konseling');
                 },
                 style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: Colors.red),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  foregroundColor: Colors.red,
+                  side: const BorderSide(color: Colors.red, width: 2),
                   backgroundColor: Colors.white,
-                  primary: Colors.red,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text('Button 2'),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'Psychologist',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
                 ),
               ),
             ],
