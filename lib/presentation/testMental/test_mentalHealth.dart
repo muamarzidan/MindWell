@@ -82,7 +82,7 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
         children: [
           Text(
             question,
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18, color: AppColors.primaryFontColor),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
@@ -112,7 +112,7 @@ class _MentalHealthTestPageState extends State<MentalHealthTestPage> {
       duration: const Duration(milliseconds: 300),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: isSelected ? Colors.blue : Colors.white,
+        color: isSelected ? AppColors.primaryColor : Colors.white,
         border: Border.all(
           color: const Color.fromARGB(255, 181, 181, 181),
           width: 1,
