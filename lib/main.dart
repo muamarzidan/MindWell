@@ -8,9 +8,10 @@ import 'package:mindwell/presentation/article/article-detail.dart';
 import 'package:mindwell/presentation/article/article.dart';
 import 'package:mindwell/presentation/meditation/meditation.dart';
 import 'package:mindwell/presentation/NotificationScreen.dart';
+import 'package:mindwell/presentation/package_screen.dart';
 import 'package:mindwell/presentation/physical/physical.dart';
 import 'package:mindwell/presentation/recomendation/recomendation.dart';
-import 'package:mindwell/presentation/stepPage/step_page.dart';
+import 'package:mindwell/presentation/stepper/step_page.dart';
 import 'package:mindwell/presentation/testMental/confirmation_test_mentalHealt.dart';
 import 'package:mindwell/presentation/testMental/result_test_mentalHealth.dart';
 import 'package:mindwell/presentation/testMental/test_mentalHealth.dart';
@@ -46,6 +47,7 @@ class MindWellApp extends StatelessWidget {
         "/home": (context) => const HomeScreen(),
         "/profile": (context) => ProfileScreen(),
         "/emergency": (context) => const EmergencyScreen(),
+        "package": (context) => PackageScreen(),
         "/counseling": (context) => CounselingScreen(),
         "/recommendation": (context) => RecommendationScreen(),
         "/meditation": (context) => MeditationScreen(),

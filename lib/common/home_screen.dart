@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> _routes = [
     '/home',
     '/community',
-    '/counseling',
+    '/package',
     '/schedule',
   ];
 

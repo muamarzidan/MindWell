@@ -38,7 +38,7 @@ class ResultTestMentalHealth extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/counseling');
+                    Navigator.pushNamed(context, '/package');
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: AppColors.primaryColor,
