@@ -47,7 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
-                      ),
+                      ),  
                     ),
                     TextSpan(
                       text: "Well",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mindwell/playground/video.dart';
+import 'package:mindwell/presentation/CounselingScreen.dart';
 import 'package:mindwell/presentation/EmergencyScreen.dart';
 import 'package:mindwell/presentation/ProfileScreen.dart';
 import 'package:mindwell/presentation/article/article-detail.dart';
@@ -45,6 +46,7 @@ class MindWellApp extends StatelessWidget {
         "/home": (context) => const HomeScreen(),
         "/profile": (context) => ProfileScreen(),
         "/emergency": (context) => const EmergencyScreen(),
+        "/counseling": (context) => CounselingScreen(),
         "/recommendation": (context) => RecommendationScreen(),
         "/meditation": (context) => MeditationScreen(),
         "/physical-activity": (context) => PhysicalScreen(),

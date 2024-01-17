@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/presentation/CommunityScreen.dart';
+import 'package:mindwell/presentation/CounselingScreen.dart';
+import 'package:mindwell/presentation/ScheduleScreen.dart';
 
 import 'package:mindwell/theme/color.dart';
 import 'package:mindwell/components/appbar.dart';
@@ -16,38 +19,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
+  final List<String> _routes = [
+    '/home',
+    '/community',
+    '/counseling',
+    '/schedule',
+  ];
+
   final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
-    Container(
-      color: Colors.red,
-      child: const Text(
-        'Searchh',
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    ),
-    Container(
-      color: Colors.blue,
-      child: const Text(
-        'Favorites',
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    ),
-    Container(
-      color: Colors.green,
-      child: const Text(
-        'Profile',
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    ),
+    CommunityScreen(),
+    CounselingScreen(),
+    ScheduleScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -66,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         profileIcon: 'assets/images/logo/logo_base_profile.png',
         notificationIcon: 'assets/images/logo/logo_notification.png',
         profileIconTap: () {
-          // action
+          // Action
         },
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -91,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_time_sharp),
-            label: 'Schddedule',
+            label: 'Schedule',
           ),
         ],
       ),
@@ -106,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
           left: MediaQuery.of(context).size.width / 2 - 30,
           child: GestureDetector(
             onTap: () {
-              // Navigation to /emergency
               Navigator.pushNamed(context, '/emergency');
             },
             child: Container(

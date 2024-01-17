@@ -45,7 +45,7 @@ class EmergencyScreen extends StatelessWidget {
               const SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/konseling');
+                  Navigator.pushNamed(context, '/counseling');
                 },
                 style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(

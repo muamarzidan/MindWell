@@ -122,6 +122,11 @@ flutter:
     - assets/images/main/physical/dancer.png
     - assets/images/main/physical/jogging.png
     - assets/images/main/physical/strech.png
+    #psikolog
+    - assets/images/main/psikolog/Psikolog1_Rina.jpg
+    - assets/images/main/psikolog/Psikolog2_Kafka.jpg
+    - assets/images/main/psikolog/Psikolog3_Meisari.jpg
+    - assets/images/main/psikolog/Psikolog4_Alfan.jpg
 
     #test-mental-health
     - assets/images/main/testMental/icon-mental-health.png
