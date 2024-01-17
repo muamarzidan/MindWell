@@ -28,12 +28,12 @@ class AppBarPrimary extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarPrimaryState extends State<AppBarPrimary> {
-  GlobalKey _avatarKey = GlobalKey();
+  final GlobalKey _avatarKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: AppBar(
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
@@ -47,7 +47,7 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
               height: 1,
               child: Image.asset(
                 'assets/images/logo/logo_base_profile.png',
-                key: _avatarKey, // Tambahkan kunci di sini
+                key: _avatarKey,
                 fit: BoxFit.cover,
               ),
             ),

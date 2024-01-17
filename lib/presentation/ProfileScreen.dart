@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/theme/color.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -10,77 +12,90 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Screen'),
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: true,
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Image (bulat kecil ditengah)
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/images/profile_image.jpg'),
-            ),
-            SizedBox(height: 20),
-            // Text (Informasi Personal)
-            Text(
-              'Informasi Personal',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/images/logo/logo_base_profile.png'),
               ),
-            ),
-            SizedBox(height: 20),
-            // Kotak (berisi 2 komponen, yaitu icon account di kiri dan disebelah kanannya teks "nama")
-            _buildInfoBox(Icons.account_circle, 'Nama', 'John Doe'),
-            // Kotak (berisi 2 komponen, yaitu icon account di kiri dan disebelah kanannya teks "nama")
-            _buildInfoBox(Icons.account_circle, 'Nama', 'Jane Doe'),
-            // Kotak (berisi 2 komponen, yaitu icon gender di kiri dan disebelah kanannya teks "female")
-            _buildInfoBox(Icons.person, 'Gender', 'Female'),
-            // Kotak (berisi 2 komponen, yaitu icon kalender dan disebelah kanannya teks "03/02/2003")
-            _buildInfoBox(Icons.calendar_today, 'Tanggal Lahir', '03/02/2003'),
-            // Kotak (berisi 2 komponen, yaitu icon email dan disebelah kanannya teks "mail@gmail.com")
-            _buildInfoBox(Icons.email, 'Email', 'mail@gmail.com'),
-            // Kotak (berisi 2 komponen, yaitu icon lock/gembok dan disebelah kanannya teks "Ganti password")
-            _buildInfoBox(Icons.lock, 'Password', 'Ganti password'),
-            SizedBox(height: 20),
-            // Teks Bahasa
-            Text(
-              'Bahasa',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              const SizedBox(height: 20),
+              const Text(
+                'Personal Information',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              _buildInfoBox(Icons.account_circle, 'Muamar Zidan'),
+              _buildInfoBox(Icons.account_circle, 'Amar'),
+              _buildInfoBox(Icons.person, 'Male'),
+              _buildInfoBox(Icons.calendar_today, '20/10/2000'),
+              _buildInfoBox(Icons.email, 'email123@gmail.com'),
+              _buildInfoBox(Icons.lock, 'Ganti Password'),
+              const SizedBox(height: 20),
+              const Text(
+                'Bahasa',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                'English',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 50),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildInfoBox(IconData icon, String label, String value) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(vertical: 10),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Icon di kiri
-          Icon(icon),
-          // Teks di kanan
-          Text(
-            '$label: $value',
-            style: TextStyle(
-              fontSize: 16,
-            ),
+  Widget _buildInfoBox(IconData icon, String label) {
+  return Container(
+    padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.symmetric(vertical: 10),
+    width: double.infinity,
+    decoration: BoxDecoration(
+      border: Border.all(color: Colors.grey),
+      borderRadius: BorderRadius.circular(0),
+    ),
+    height: 50,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(icon),
+        const SizedBox(width: 10),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 }
