@@ -41,159 +41,161 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RichText(
-                text: const TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Mind",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Well",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 15),
-              const Text(
-                "Welcome to Back",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: "Poppins",
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 5),
-              const Text(
-                "return to being a quality person",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                  fontFamily: "Poppins",
-                ),
-              ),
-              const SizedBox(height: 20),
-              FormAuthController(
-                controller: _emailController,
-                hintText: "Enter your email address",
-                isPasswordField: false,
-              ),
-              const SizedBox(height: 20),
-              FormAuthController(
-                controller: _passwordController,
-                hintText: "Enter your password",
-                isPasswordField: true,
-              ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
-                  _login();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
-                  _loginWithGoogle();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: AppColors.primaryColor,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView( 
+        child : Center(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 200.0, 20.0, 20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  text: const TextSpan(
                     children: [
-                      Icon(
-                        FontAwesomeIcons.google,
-                        color: Colors.red,
-                        size: 20,
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        "Google",
+                      TextSpan(
+                        text: "Mind",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 30,
                           fontFamily: "Poppins",
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.bold,
                           color: Colors.black,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "Well",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have an account?",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
+                const SizedBox(height: 15),
+                const Text(
+                  "Welcome to Back",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: "Poppins",
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                const Text(
+                  "return to being a quality person",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    fontFamily: "Poppins",
+                  ),
+                ),
+                const SizedBox(height: 20),
+                FormAuthController(
+                  controller: _emailController,
+                  hintText: "Enter your email address",
+                  isPasswordField: false,
+                ),
+                const SizedBox(height: 20),
+                FormAuthController(
+                  controller: _passwordController,
+                  hintText: "Enter your password",
+                  isPasswordField: true,
+                ),
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    _login();
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, "/register");
-                    },
-                    child: const Text(
-                      "Now Register",
+                ),
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    _loginWithGoogle();
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: AppColors.primaryColor,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.google,
+                          color: Colors.red,
+                          size: 20,
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "Google",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w800,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don't have an account?",
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.normal,
-                        color: AppColors.primaryColor,
+                        color: Colors.black,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, "/register");
+                      },
+                      child: const Text(
+                        "Now Register",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
