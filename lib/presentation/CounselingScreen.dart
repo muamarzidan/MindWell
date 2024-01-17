@@ -76,6 +76,16 @@ class _CounselingScreenState extends State<CounselingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: true,
+        iconTheme:
+            const IconThemeData(size: 30.0, color: AppColors.primaryFontColor),
+        actions: const [],
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,

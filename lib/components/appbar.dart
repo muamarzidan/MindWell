@@ -198,7 +198,7 @@ class AppBarSecondary extends StatelessWidget implements PreferredSizeWidget {
 
   const AppBarSecondary({
     Key? key,
-    this.onBackTap,
+    this.onBackTap, required Null Function() iconTap, required IconData icon, required String title,
   }) : super(key: key);
 
   @override

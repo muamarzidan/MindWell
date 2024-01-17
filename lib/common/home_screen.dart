@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/presentation/CommunityScreen.dart';
-import 'package:mindwell/presentation/CounselingScreen.dart';
-import 'package:mindwell/presentation/ScheduleScreen.dart';
+import 'package:mindwell/presentation/community_screen.dart';
+import 'package:mindwell/presentation/schedule_screen.dart';
+import 'package:mindwell/presentation/package_screen.dart';
 
 import 'package:mindwell/theme/color.dart';
 import 'package:mindwell/components/appbar.dart';
@@ -29,15 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
     CommunityScreen(),
-    CounselingScreen(),
+    PackageScreen(),
     ScheduleScreen(),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  if (_selectedIndex != index) {
+    Navigator.pushNamed(context, _routes[index]);
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -121,5 +122,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 
 

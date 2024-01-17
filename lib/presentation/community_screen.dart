@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:mindwell/theme/color.dart';
 
-class ScheduleScreen extends StatefulWidget {
+class CommunityScreen extends StatefulWidget {
   @override
-  _ScheduleScreenState createState() => _ScheduleScreenState();
+  _CommunityScreenState createState() => _CommunityScreenState();
 }
 
-class _ScheduleScreenState extends State<ScheduleScreen> {
+class _CommunityScreenState extends State<CommunityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              'Don t have a notification yet',
+              'Don t have a notification yettt',
               style: TextStyle(
                 color: AppColors.secondaryFontColor,
                 fontWeight: FontWeight.bold,
