@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:mindwell/presentation/login/login_screen.dart';
 
 import 'package:mindwell/theme/color.dart';
 
@@ -126,16 +129,61 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
         ),
         PopupMenuItem(
           child: ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('Logout'),
+            leading: const Icon(Icons.logout),
+            title: const Text('Logout'),
             onTap: () {
               Navigator.pop(context);
-              // Add action for 'Logout'
+              _showLogoutConfirmationDialog();
             },
           ),
         ),
       ],
     );
+  }
+
+  void _showLogoutConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Konfirmasi Logout"),
+          content: const Text("Apakah Anda yakin untuk logout?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Tidak"),
+            ),
+            TextButton(
+              onPressed: () async {
+                await _logout();
+              },
+              child: const Text("Ya"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      await GoogleSignIn().signOut();
+      print("Logout berhasil");
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
+    } catch (e) {
+      print("Gagal logout: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Gagal logout"),
+        ),
+      );
+    }
   }
 
   Rect _getRectFromKey(GlobalKey key) {
