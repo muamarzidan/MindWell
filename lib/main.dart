@@ -13,7 +13,7 @@ import 'package:mindwell/presentation/notification_screen.dart';
 import 'package:mindwell/presentation/Counseling/package_counseling_screen.dart';
 import 'package:mindwell/presentation/physical/physical.dart';
 import 'package:mindwell/presentation/recomendation/recomendation.dart';
-import 'package:mindwell/presentation/schedule_screen.dart';
+import 'package:mindwell/presentation/Counseling/schedule_counseling_screen.dart';
 import 'package:mindwell/presentation/stepper/step_page.dart';
 import 'package:mindwell/presentation/testMental/confirmation_test_mentalHealt.dart';
 import 'package:mindwell/presentation/testMental/result_test_mentalHealth.dart';

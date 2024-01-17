@@ -9,11 +9,14 @@ class ResultTestMentalHealth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
+
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +32,7 @@ class ResultTestMentalHealth extends StatelessWidget {
                   child: Text(
                     'Based on the test results, it appears that your stress levels, anxiety symptoms and sleep quality are likely to be of primary concern. Even if you feel socially supported and have neutral self-esteem, it s a good idea to take steps to manage your stress levels and improve your sleep. Consider consulting a mental health professional to get further support and plan appropriate actions.',
                     textAlign: TextAlign.justify,
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(color: AppColors.secondaryFontColor ,fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
@@ -46,8 +49,8 @@ class ResultTestMentalHealth extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                       side: const BorderSide(
-                        width: 1,
-                        color: AppColors.primaryColor,
+                        width: 3,
+                        color: Color.fromARGB(255, 0, 174, 255),
                       ),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 15),
