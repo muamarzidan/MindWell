@@ -270,6 +270,5 @@ class _DetailPsikologScreenState extends State<DetailPsikologScreen> {
     );
   }
 
-  // Contoh penggunaan
   final List<String> times = ['17.00', '01.00', '20.00', '12.00', '15.00'];
 }
