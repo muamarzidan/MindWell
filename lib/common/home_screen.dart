@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/presentation/community_screen.dart';
 import 'package:mindwell/presentation/schedule_screen.dart';
-import 'package:mindwell/presentation/package_screen.dart';
+import 'package:mindwell/presentation/Counseling/package_counseling_screen.dart';
 
 import 'package:mindwell/theme/color.dart';
 import 'package:mindwell/components/appbar.dart';

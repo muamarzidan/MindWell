@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/presentation/article/article-detail.dart';
+import 'package:mindwell/presentation/Article/article-detail.dart';
 
 import 'package:mindwell/theme/color.dart';
 

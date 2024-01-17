@@ -264,12 +264,17 @@ class _CounselingRating extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        const Text(
-          'View Profile',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 12,
-            decoration: TextDecoration.underline,
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/detail-psikolog');
+          },
+          child: const Text(
+            'View Profile',
+            style: TextStyle(
+              color: AppColors.primaryColor,
+              fontSize: 12,
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

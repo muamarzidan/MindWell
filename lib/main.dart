@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mindwell/playground/video.dart';
-import 'package:mindwell/presentation/CounselingScreen.dart';
-import 'package:mindwell/presentation/EmergencyScreen.dart';
-import 'package:mindwell/presentation/ProfileScreen.dart';
-import 'package:mindwell/presentation/article/article-detail.dart';
-import 'package:mindwell/presentation/article/article.dart';
+import 'package:mindwell/presentation/Counseling/detail_counseling_screen.dart';
+import 'package:mindwell/presentation/Counseling/psikolog_counseling_screen.dart';
+import 'package:mindwell/presentation/emergency_screen.dart';
+import 'package:mindwell/presentation/profile_screen.dart';
+import 'package:mindwell/presentation/Article/article-detail.dart';
+import 'package:mindwell/presentation/Article/article.dart';
 import 'package:mindwell/presentation/community_screen.dart';
 import 'package:mindwell/presentation/meditation/meditation.dart';
-import 'package:mindwell/presentation/NotificationScreen.dart';
-import 'package:mindwell/presentation/package_screen.dart';
+import 'package:mindwell/presentation/notification_screen.dart';
+import 'package:mindwell/presentation/Counseling/package_counseling_screen.dart';
 import 'package:mindwell/presentation/physical/physical.dart';
 import 'package:mindwell/presentation/recomendation/recomendation.dart';
 import 'package:mindwell/presentation/schedule_screen.dart';
@@ -50,9 +51,10 @@ class MindWellApp extends StatelessWidget {
         "/profile": (context) => ProfileScreen(),
         "/emergency": (context) => const EmergencyScreen(),
         "/package": (context) => PackageScreen(),
+        "/counseling": (context) => CounselingScreen(),
+        "/detail-psikolog": (context) => DetailPsikologScreen(),
         "/community": (context) => CommunityScreen(),
         "/schedule": (context) => ScheduleScreen(),
-        "/counseling": (context) => CounselingScreen(),
         "/recommendation": (context) => RecommendationScreen(),
         "/meditation": (context) => MeditationScreen(),
         "/physical-activity": (context) => PhysicalScreen(),

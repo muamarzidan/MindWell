@@ -142,7 +142,7 @@ class _PackageCard extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/counseling');
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
