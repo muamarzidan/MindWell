@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mindwell/playground/video.dart';
+import 'package:mindwell/presentation/Community/community_screen.dart';
 import 'package:mindwell/presentation/Counseling/detail_counseling_screen.dart';
 import 'package:mindwell/presentation/Counseling/psikolog_counseling_screen.dart';
 import 'package:mindwell/presentation/emergency_screen.dart';
-import 'package:mindwell/presentation/profile_screen.dart';
+import 'package:mindwell/presentation/Profile/profile_screen.dart';
 import 'package:mindwell/presentation/Article/article-detail.dart';
 import 'package:mindwell/presentation/Article/article.dart';
-import 'package:mindwell/presentation/community_screen.dart';
-import 'package:mindwell/presentation/meditation/meditation.dart';
+import 'package:mindwell/presentation/Meditation/meditation.dart';
 import 'package:mindwell/presentation/notification_screen.dart';
 import 'package:mindwell/presentation/Counseling/package_counseling_screen.dart';
-import 'package:mindwell/presentation/physical/physical.dart';
-import 'package:mindwell/presentation/recomendation/recomendation.dart';
+import 'package:mindwell/presentation/Physical/physical_screen.dart';
+import 'package:mindwell/presentation/recomendation_screen.dart';
 import 'package:mindwell/presentation/Counseling/schedule_counseling_screen.dart';
-import 'package:mindwell/presentation/stepper/step_page.dart';
-import 'package:mindwell/presentation/testMental/confirmation_test_mentalHealt.dart';
-import 'package:mindwell/presentation/testMental/result_test_mentalHealth.dart';
-import 'package:mindwell/presentation/testMental/test_mentalHealth.dart';
+import 'package:mindwell/presentation/step_page.dart';
+import 'package:mindwell/presentation/TestMental/confirmation_test_mentalHealt.dart';
+import 'package:mindwell/presentation/TestMental/result_test_mentalHealth.dart';
+import 'package:mindwell/presentation/TestMental/test_mentalHealth.dart';
 import 'firebase_options.dart';
 
 import 'package:mindwell/common/splash_screen.dart';
 import 'package:mindwell/common/home_screen.dart';
-import 'package:mindwell/presentation/login/login_screen.dart';
+import 'package:mindwell/presentation/Auth/login_screen.dart';
 import 'package:mindwell/features/register/register_screen.dart';
-import 'package:mindwell/presentation/testMental/main_test_mentalHeath.dart';
+import 'package:mindwell/presentation/TestMental/main_test_mentalHeath.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mindwell/presentation/login/login_screen.dart';
+import 'package:mindwell/presentation/Auth/login_screen.dart';
 
 import 'package:mindwell/theme/color.dart';
 
@@ -143,6 +143,7 @@ class _AppBarPrimaryState extends State<AppBarPrimary> {
 
   void _showLogoutConfirmationDialog() {
     showDialog(
+      barrierColor: Colors.white,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(

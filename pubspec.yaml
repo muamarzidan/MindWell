@@ -122,6 +122,11 @@ flutter:
     - assets/images/main/physical/dancer.png
     - assets/images/main/physical/jogging.png
     - assets/images/main/physical/strech.png
+    #community
+    - assets/images/main/community/profile_komunitas1.jpg
+    - assets/images/main/community/profile_komunitas2.jpg
+    - assets/images/main/community/profile_komunitas3.jpg
+    - assets/images/main/community/profile_komunitas4.jpg
     #psikolog
     - assets/images/main/psikolog/Psikolog1_Rina.jpg
     - assets/images/main/psikolog/Psikolog2_Kafka.jpg
