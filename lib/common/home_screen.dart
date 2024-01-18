@@ -60,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        selectedIconTheme: const IconThemeData(color: AppColors.primaryColor),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
