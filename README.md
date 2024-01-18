@@ -13,8 +13,9 @@ Sebelum memulai, pastikan sudah menginstal Flutter dan Dart di sistem Anda. Jika
     flutter run
 
 3.  Perubahan
-    const String apiKey = 'YOUR_API_KEY';
-    const bool enableFeatureX = true;
+    ```Note
+    - const String apiKey = 'YOUR_API_KEY';
+    - const bool enableFeatureX = true;
 
 # Deskripsi Tim CodeByte
 CodeByte adalah sebuah tim yang beranggotakan 4 orang dengan 3 role yaitu hacker, hustler, hipster. Tim kami tidak hanya dari 1 universitas saja, namun tim kami gabungan dari beberapa universitas. Dengan adanya tim kami, kami membuat sebuah aplikasi bernama mindwell. Dimana aplikasi ini befokuskan tentang kesehatan mental
