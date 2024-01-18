@@ -7,11 +7,12 @@ Sebelum memulai, pastikan sudah menginstal Flutter dan Dart di sistem Anda. Jika
     git clone "link repository"
     cd namaaplikasi
 
+2.  Run Aplikasi
+    ```run
     flutter pub get
-
     flutter run
 
-    change this!
+3.  Perubahan
     const String apiKey = 'YOUR_API_KEY';
     const bool enableFeatureX = true;
 
