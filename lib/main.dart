@@ -4,6 +4,8 @@ import 'package:mindwell/playground/video.dart';
 import 'package:mindwell/presentation/Community/community_screen.dart';
 import 'package:mindwell/presentation/Counseling/detail_counseling_screen.dart';
 import 'package:mindwell/presentation/Counseling/psikolog_counseling_screen.dart';
+import 'package:mindwell/presentation/DataProfile/biodata_screen.dart';
+import 'package:mindwell/presentation/DataProfile/emotion_screen.dart';
 import 'package:mindwell/presentation/emergency_screen.dart';
 import 'package:mindwell/presentation/Profile/profile_screen.dart';
 import 'package:mindwell/presentation/Article/article-detail.dart';
@@ -23,7 +25,7 @@ import 'firebase_options.dart';
 import 'package:mindwell/common/splash_screen.dart';
 import 'package:mindwell/common/home_screen.dart';
 import 'package:mindwell/presentation/Auth/login_screen.dart';
-import 'package:mindwell/features/register/register_screen.dart';
+import 'package:mindwell/presentation/Auth/register_screen.dart';
 import 'package:mindwell/presentation/TestMental/main_test_mentalHeath.dart';
 
 Future main() async {
@@ -47,6 +49,8 @@ class MindWellApp extends StatelessWidget {
         "/step-page": (context) => const StepPage(),
         "/login": (context) => const LoginScreen(),
         "/register": (context) => const RegisterScreen(),
+        "/biodata": (context) => BiodataScreen(),
+        "/emotion": (context) => EmotionScreen(),
         "/home": (context) => const HomeScreen(),
         "/profile": (context) => ProfileScreen(),
         "/emergency": (context) => const EmergencyScreen(),

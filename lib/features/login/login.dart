@@ -7,13 +7,12 @@ import 'package:mindwell/features/auth/firebase_auth_controller.dart';
 class Loginhandler {
   final FirebaseAuthController _auth = FirebaseAuthController();
 
-  Future<void> loginWithEmailPassword(
-      String email, String password, BuildContext context) async {
+  Future<void> loginWithEmailPassword(String email, String password, BuildContext context) async {
     User? user = await _auth.signInWithEmailAndPassword(email, password);
 
     if (user != null) {
       print("Berhasil login");
-      Navigator.of(context).pushReplacementNamed("/home");
+      Navigator.pushReplacementNamed(context, "/biodata");
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -27,7 +26,8 @@ class Loginhandler {
     final GoogleSignIn googleLogin = GoogleSignIn();
 
     try {
-      final GoogleSignInAccount? googleSignInAccount = await googleLogin.signIn();
+      final GoogleSignInAccount? googleSignInAccount =
+          await googleLogin.signIn();
 
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
@@ -36,7 +36,7 @@ class Loginhandler {
           accessToken: googleSignInAuthentication.accessToken,
           idToken: googleSignInAuthentication.idToken,
         );
-        
+
         await FirebaseAuth.instance.signInWithCredential(credential);
         Navigator.of(context).pushReplacementNamed("/home");
       }
